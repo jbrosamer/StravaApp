@@ -11,10 +11,12 @@ import (
 )
 
 const port = 8080 // port of local demo server
+const myclientID=7582
+const mySecret="85a5f1be79a97e5fe19b99d12fa2196c81da4629"
 
 var authenticator *strava.OAuthAuthenticator
 
-func main() {
+func hello() {
     fmt.Printf("hello, world\n")
 }
 
@@ -31,12 +33,12 @@ func main() {
 //   Application id and secret can be found at https://www.strava.com/settings/api
 
 
-func mainExample() {
+func main() {
 	// setup the credentials for your app
 	// These need to be set to reflect your application
 	// and can be found at https://www.strava.com/settings/api
-	flag.IntVar(&strava.ClientId, "id", 0, "Strava Client ID")
-	flag.StringVar(&strava.ClientSecret, "secret", "", "Strava Client Secret")
+	flag.IntVar(&strava.ClientId, "id", myclientID, "Strava Client ID")
+	flag.StringVar(&strava.ClientSecret, "secret", mySecret, "Strava Client Secret")
 
 	flag.Parse()
 
